@@ -1,0 +1,8 @@
+---
+applications:
+- name: exampleRestServiceWithWiremock
+  memory: 256M
+  instances: 1
+  host: rest-service
+  domain: one.single.tutorial.to
+  path: build/libs/exampleRestServiceWithWiremock-0.1.0.jar
