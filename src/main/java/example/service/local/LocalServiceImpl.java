@@ -1,21 +1,25 @@
 package example.service.local;
 
+import example.service.client.RemoteServiceClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import example.service.remote.RemoteService;
 
-/**
- * Created by Wiktor Szczepaniak on 20.03.2017.
- */
 @Service
 public class LocalServiceImpl implements LocalService {
 
-  @Autowired
-  private RemoteService remoteService;
+    private final RemoteServiceClient remoteServiceClient;
 
-  @Override
-  public String getDataFromLocalService(String input) {
-    return remoteService.getRemoteData(input);
-  }
+    private static final String RESPONSE_TEMPLATE = "Input : %s, Message : %s";
+
+    @Autowired
+    public LocalServiceImpl(RemoteServiceClient remoteServiceClient) {
+        this.remoteServiceClient = remoteServiceClient;
+    }
+
+    @Override
+    public String processInputString(String input) {
+        return String.format(RESPONSE_TEMPLATE, input, remoteServiceClient.getMessageFromRemoteService(input));
+    }
+
 }

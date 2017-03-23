@@ -8,11 +8,11 @@ import lombok.Getter;
 
 @Builder
 @Getter
-public class RemoteResponseDto {
+public class RemoteServiceResponseDto {
   private final String message;
 
   @JsonCreator
-  public RemoteResponseDto(@JsonProperty(value = "message") String message) {
+  public RemoteServiceResponseDto(@JsonProperty(value = "message") String message) {
     this.message = message;
   }
 

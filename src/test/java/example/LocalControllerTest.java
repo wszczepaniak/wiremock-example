@@ -47,8 +47,8 @@ public class LocalControllerTest {
   @Test
   public void testLocalServiceWithMockedRemoteService() throws Exception {
     RestTemplate restTemplate = new RestTemplate();
-    ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8080/local", String.class);
-    org.junit.Assert.assertEquals("request from local endpoint mocked response message", response.getBody());
+    ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8080/localService", String.class);
+    org.junit.Assert.assertEquals("Input : request from client endpoint, Message : mocked remote service response", response.getBody());
   }
 
   private void mockRemoteService() {
