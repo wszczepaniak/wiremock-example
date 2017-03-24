@@ -1,0 +1,53 @@
+{
+	"variables": [],
+	"info": {
+		"name": "wiremock_local",
+		"_postman_id": "70a2f502-05ee-8ece-b8ce-b810072f67f6",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "insert /some/thing stub",
+			"request": {
+				"url": "localhost:8090/__admin/mappings",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"request\": {\r\n        \"method\": \"GET\",\r\n        \"url\": \"/some/thing\"\r\n    },\r\n    \"response\": {\r\n        \"status\": 200,\r\n        \"body\": \"Hello world!\",\r\n        \"headers\": {\r\n            \"Content-Type\": \"text/plain\"\r\n        }\r\n    }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "request for file managed stub",
+			"request": {
+				"url": "localhost:8090/some/file/managed/stub",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "request for /some/thing",
+			"request": {
+				"url": "localhost:8090/some/thing",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

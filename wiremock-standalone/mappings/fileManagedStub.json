@@ -1,0 +1,15 @@
+{
+  "id": "ea63e7ac-a863-417e-97e6-88eaab1a165f",
+  "request": {
+    "url": "/some/file/managed/stub",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "body": "Hello world from file managed mock!",
+    "headers": {
+      "Content-Type": "text/plain"
+    }
+  },
+  "uuid": "ea63e7ac-a863-417e-97e6-88eaab1a165f"
+}
